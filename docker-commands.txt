@@ -1,1 +1,4 @@
-
+docker run postgress:<latest> by default
+docker run postgress:9.6
+docker stop <container ID>
+docker start <container ID>
