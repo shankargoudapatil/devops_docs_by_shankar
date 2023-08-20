@@ -6,3 +6,23 @@ docker run postgress:<latest> by default
 docker run postgress:9.6
 docker stop <container ID>
 docker start <container ID>
+
+docker exec -it 81dac7d2258b /bin/bash
+
+docker run -d -p 27017:27017 --name mongodb-new -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=password --net mongo-network mongo:4.4
+
+Main Docker Commands
+►  docker pull
+►  docker run
+►  docker ps
+►  docker run --options
+►  docker stop
+►  docker start
+►  docker ports, docker port mapping
+
+🚀  6. Debugging a Container
+►  docker logs
+►  docker exec -it
+
+
+
