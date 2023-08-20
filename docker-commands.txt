@@ -9,6 +9,8 @@ docker start <container ID>
 
 docker exec -it 81dac7d2258b /bin/bash
 
+docker run -d -p 8083:8083 -e ME_CONFIG_MONGODB_SERVER=mongodb-new -e ME_CONFIG_BASICAUTH_USERNAME=admin -e ME_CONFIG_BASICAUTH_PASSWORD=password --name mongo-express-latest --net mongo-network mongo-express:latest
+
 docker run -d -p 27017:27017 --name mongodb-new -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=password --net mongo-network mongo:4.4
 
 Main Docker Commands
