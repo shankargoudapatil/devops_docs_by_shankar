@@ -1,5 +1,7 @@
 To see running docker containers:
 docker ps
+To See both running and not running or inactive containers:
+docker ps -a
 docker run postgress:<latest> by default
 docker run postgress:9.6
 docker stop <container ID>
