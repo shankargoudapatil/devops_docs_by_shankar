@@ -1,1 +1,7 @@
+Mongo Db Installation:
+------------------------
+https://www.youtube.com/watch?v=uklyCSKQ1Po
+Command to install mongo db through docker
+--------------------------------------------
+docker run -d -p 2717:27017 -v~/mongo-data:/data/db --name local-mongo mongo:latest
 
