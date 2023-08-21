@@ -9,3 +9,15 @@ CREATE TABLE employees (
 INSERT INTO public.employees
 (first_name, last_name, email)
 VALUES('John', 'Doe', 'john@example.com');
+
+INSERT INTO public.employees
+(first_name, last_name, email)
+VALUES('shaurya', 'patil', 'shaurya@example.com');
+
+select * from public.employees 
+
+create table t1;
+
+CREATE TABLE public.t2 (
+
+);
