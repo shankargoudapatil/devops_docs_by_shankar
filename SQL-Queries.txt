@@ -1,3 +1,12 @@
+Youtube channels for references Credits to Ankit Banasal:
+---------------------------------------
+https://www.youtube.com/watch?v=Iv9qBz-cyVA
+https://www.youtube.com/watch?v=fV8IYHOlONg
+
+-----------------------------------------
+sample queries for hands on practice
+-----------------------------------
+
 CREATE TABLE employees (
     id serial PRIMARY KEY,
     first_name VARCHAR (100),
