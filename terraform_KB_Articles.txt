@@ -1,1 +1,59 @@
+Sample terraform code for dynamic block
+
+resource "aws_security_group" "sg_group" {
+  name        = "sg_group"
+  description = "allow ports"
+
+  dynamic "ingress" {
+    for_each = var.sg_ports
+    iterator = "port"
+
+    content {
+      from_port   = port.value
+      to_port     = port.value
+      protocol    = "tcp"
+      cidr_blocks = ["0.0.0.0/0"]
+    }
+  }
+}
+
+Error message
+-------------------------------------------------------------------
+terraform plan
+╷
+│ Error: Unknown variable
+│
+│   on dyanmic_block.tf line 23, in resource "aws_security_group" "sg_group":
+│   23:     for_each = var.sg_ports
+│
+│ There is no variable named "var".
+╵
+╷
+│ Error: Invalid expression
+│
+│   on dyanmic_block.tf line 24, in resource "aws_security_group" "sg_group":
+│   24:     iterator = "port"
+│
+│ A single static variable reference is required: only attribute access and indexing with constant keys. No calculations, function
+│ calls, template expressions, etc are allowed here.
+-------------------------------------------------------------
+Following code fixed the above errors
+---------------------------------------
+resource "aws_security_group" "sg_group" {
+  name        = "sg_group"
+  description = "allow ports"
+
+  dynamic "ingress" {
+    for_each = var.sg_ports
+    iterator = port
+
+    content {
+      from_port   = port.value
+      to_port     = port.value
+      protocol    = "tcp"
+      cidr_blocks = ["0.0.0.0/0"]
+    }
+  }
+}
+----------------------------------------------------------------------
 
