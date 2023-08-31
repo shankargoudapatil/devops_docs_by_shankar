@@ -2,7 +2,7 @@ name: PR Analysis
 on: 
   pull_request:
     branches:    
-      - main
+      - main-test
 
 jobs:
   build:
