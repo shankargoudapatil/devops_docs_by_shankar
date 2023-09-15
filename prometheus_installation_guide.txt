@@ -1,0 +1,8 @@
+wget https://github.com/prometheus/prometheus/releases/download/v2.47.0/prometheus-2.47.0.linux-amd64.tar.gz
+ls -ltrh
+sudo useradd --no-create-home --shell /bin/false prometheus
+sudo mkdir /etc/prometheus
+sudo mkdir /var/lib/prometheus
+sudo chown prometheus:promtheus /etc/prometheus/
+sudo chown prometheus:prometheus /etc/prometheus/
+sudo chown prometheus:prometheus /var/lib/prometheus
